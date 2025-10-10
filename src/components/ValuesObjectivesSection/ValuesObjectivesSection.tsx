@@ -77,8 +77,8 @@ const ValuesObjectivesSection: React.FC = () => {
             </div>
 
             <div className="text-center w-full max-w-3xl mx-auto px-4">
-              <p className="text-orange-400 font-semibold tracking-wide uppercase text-xs sm:text-sm mb-3 sm:mb-4">CORE VALUES</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-blue-950 leading-tight">
+              <p className="text-orange-400 font-poppins font-semibold tracking-wide uppercase text-xs sm:text-sm mb-3 sm:mb-4">CORE VALUES</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-blue-950 leading-tight">
                 Our Guiding Principles
               </h2>
             </div>
@@ -100,8 +100,8 @@ const ValuesObjectivesSection: React.FC = () => {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-950 rounded-full flex items-center justify-center mb-4 sm:mb-6 text-white">
                   {value.icon}
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-blue-950 mb-2 sm:mb-3">{value.title}</h3>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{value.description}</p>
+                <h3 className="text-lg sm:text-xl font-poppins font-bold text-blue-950 mb-2 sm:mb-3">{value.title}</h3>
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed font-inter">{value.description}</p>
               </div>
             ))}
           </div>
@@ -112,8 +112,8 @@ const ValuesObjectivesSection: React.FC = () => {
       <section ref={objectivesRef} className="w-full py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="w-full max-w-7xl mx-auto">
           <div className="text-center w-full max-w-3xl mx-auto mb-12 sm:mb-16 px-4">
-            <p className="text-orange-400 font-semibold tracking-wide uppercase text-xs sm:text-sm mb-3 sm:mb-4">BUSINESS OBJECTIVES</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-blue-950 leading-tight">
+            <p className="text-orange-400 font-poppins font-semibold tracking-wide uppercase text-xs sm:text-sm mb-3 sm:mb-4">BUSINESS OBJECTIVES</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-blue-950 leading-tight">
               Driving Sustainable Growth
             </h2>
           </div>
@@ -136,8 +136,8 @@ const ValuesObjectivesSection: React.FC = () => {
                     {objective.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg sm:text-xl font-bold text-blue-950 mb-2 sm:mb-3">{objective.title}</h3>
-                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{objective.description}</p>
+                    <h3 className="text-lg sm:text-xl font-poppins font-bold text-blue-950 mb-2 sm:mb-3">{objective.title}</h3>
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed font-inter">{objective.description}</p>
                   </div>
                 </div>
               </div>

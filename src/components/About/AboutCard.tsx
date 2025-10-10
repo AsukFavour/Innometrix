@@ -37,7 +37,7 @@ const AboutCard: React.FC = () => {
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 {/* Team Image - Replace src with actual image path */}
                 <img 
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" 
+                  src="/coding-picture.jpg" 
                   alt="The Innometrix Team" 
                   className="w-full h-full object-cover aspect-[4/3]"
                 />
@@ -50,11 +50,11 @@ const AboutCard: React.FC = () => {
           {/* Right - Content */}
           <div className={`space-y-6 transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
             <div>
-              <p className="text-blue-900 font-semibold tracking-wide uppercase text-sm mb-4">ABOUT US</p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-blue-950 leading-tight mb-6">
+              <p className="text-blue-900 font-poppins font-semibold tracking-wide uppercase text-sm mb-4">ABOUT US</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-blue-950 leading-tight mb-6">
                 Our Philosophy
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg font-inter text-gray-600 leading-relaxed">
                 Innometrix Technology Limited is an Information and Communications Technology (ICT) company founded on a single, powerful principle: technology should exist to simplify, not complicate, life. We are a broad-ranging software development company that leverages Artificial Intelligence (AI) and advanced internet-enabled activities to build tangible solutions to everyday problems.
 
               </p>
@@ -65,30 +65,30 @@ const AboutCard: React.FC = () => {
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <p className="text-blue-950 font-semibold">High Success Rate</p>
+                  <p className="text-blue-950 font-poppins font-semibold">High Success Rate</p>
                 </div>
-                <p className="text-gray-600 text-sm pl-4">Client satisfaction guaranteed</p>
+                <p className="text-gray-600 text-sm pl-4 font-inter">Client satisfaction guaranteed</p>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <p className="text-blue-950 font-semibold">Expert Team</p>
+                  <p className="text-blue-950 font-poppins font-semibold">Expert Team</p>
                 </div>
-                <p className="text-gray-600 text-sm pl-4">Seasoned professionals</p>
+                <p className="text-gray-600 text-sm pl-4 font-inter">Seasoned professionals</p>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <p className="text-blue-950 font-semibold">AI-Powered</p>
+                  <p className="text-blue-950 font-poppins font-semibold">AI-Powered</p>
                 </div>
-                <p className="text-gray-600 text-sm pl-4">Intelligent automation</p>
+                <p className="text-gray-600 text-sm pl-4 font-inter">Intelligent automation</p>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <p className="text-blue-950 font-semibold">Proven Results</p>
+                  <p className="text-blue-950 font-poppins font-semibold">Proven Results</p>
                 </div>
-                <p className="text-gray-600 text-sm pl-4">Measurable outcomes</p>
+                <p className="text-gray-600 text-sm pl-4 font-inter">Measurable outcomes</p>
               </div>
             </div>
           </div>

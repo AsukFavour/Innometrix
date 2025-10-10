@@ -35,14 +35,14 @@ const WhyWeExist: React.FC = () => {
         }`}
       >
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-poppins font-bold text-white mb-4">
             Why We Exist: The Pursuit of Convenience
           </h2>
           <div className="w-20 h-1 bg-orange-400 mx-auto"></div>
         </div>
         
         <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl">
-          <p className="text-blue-100 text-lg leading-relaxed max-w-4xl mx-auto text-center">
+          <p className="text-blue-100 text-lg leading-relaxed max-w-4xl mx-auto text-center font-inter">
             Modern life is complex. From managing a small business to navigating personal schedules, 
             friction and repetitive tasks steal time and energy. We exist to eliminate that friction. 
             Our mission is driven by the belief that advanced software and AI can transform complexity 

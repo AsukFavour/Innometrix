@@ -24,13 +24,13 @@ const Navbar: React.FC = () => {
 
             {/* Desktop Navigation */}
             <div className="flex items-center gap-12">
-              <Link to="/" className="text-white hover:text-gray-300 transition-colors">
+              <Link to="/" className="text-white hover:text-gray-300 transition-colors font-inter font-medium">
                 Home
               </Link>
-              <Link to="/about" className="text-white hover:text-gray-300 transition-colors">
+              <Link to="/about" className="text-white hover:text-gray-300 transition-colors font-inter font-medium">
                 About Us
               </Link>
-              <Link to="/solutions" className="text-white hover:text-gray-300 transition-colors">
+              <Link to="/solutions" className="text-white hover:text-gray-300 transition-colors font-inter font-medium">
                 Our Solutions
               </Link>
               
@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
 
             {/* Contact Button */}
             <div>
-              <Link to="/contact" className="px-6 py-2 bg-white text-blue-950 rounded-2xl font-medium hover:bg-gray-100 transition-colors">
+              <Link to="/contact" className="px-6 py-2 bg-white text-blue-950 rounded-2xl font-poppins font-semibold hover:bg-gray-100 transition-colors">
                 Contact Us
               </Link>
               
@@ -92,19 +92,19 @@ const Navbar: React.FC = () => {
         }`}
       >
         <div className="pt-24 px-6">
-          <Link to="/" className="flex items-center mb-8">
+          <Link to="/" className="flex items-center mb-8 font-inter font-medium text-white">
           Home
           </Link>
           <Link 
             to="/about" 
-            className="block py-4 text-white hover:text-gray-300 transition-colors border-b border-blue-900"
+            className="block py-4 text-white hover:text-gray-300 transition-colors border-b border-blue-900 font-inter font-medium"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             About Us
           </Link>
           <Link 
             to="/solutions" 
-            className="block py-4 text-white hover:text-gray-300 transition-colors border-b border-blue-900"
+            className="block py-4 text-white hover:text-gray-300 transition-colors border-b border-blue-900 font-inter font-medium"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Our Solutions
@@ -112,7 +112,7 @@ const Navbar: React.FC = () => {
           
           <Link 
             to="/contact" 
-            className="block mt-6 px-6 py-3 bg-white text-blue-950 rounded-full font-medium text-center hover:bg-gray-100 transition-colors"
+            className="block mt-6 px-6 py-3 bg-white text-blue-950 rounded-full font-poppins font-semibold text-center hover:bg-gray-100 transition-colors"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Contact Us

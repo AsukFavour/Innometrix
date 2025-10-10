@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const HeroSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,19 +33,17 @@ const HeroSection: React.FC = () => {
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <div className={`space-y-6 transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-blue-950 leading-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-poppins font-bold text-blue-950 leading-tight">
             Digital solutions for effortless living and business
           </h1>
           
-          <p className="text-lg md:text-xl text-blue-900 max-w-xl">
+          <p className="text-lg md:text-xl font-inter text-blue-900 max-w-xl">
             We help our partners leverage intelligent digital solutions to eliminate friction and restore time.
           </p>
           
           <div>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-blue-950 text-white rounded-lg font-medium hover:bg-blue-900 transition-colors shadow-lg hover:shadow-xl group"
-            >
+              <Link to="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-blue-950 text-white rounded-lg font-poppins font-semibold hover:bg-blue-900 transition-colors shadow-lg hover:shadow-xl group">
               Contact Us
               <svg 
                 className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
@@ -54,7 +53,8 @@ const HeroSection: React.FC = () => {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
-            </a>
+              </Link>
+
           </div>
         </div>
 

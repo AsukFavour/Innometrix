@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { visionMissionData } from '../../constants/VisionMissionData';
+import { Link } from 'react-router-dom';
 
 
 const VisionMissionSection: React.FC = () => {
@@ -129,11 +130,10 @@ const VisionMissionSection: React.FC = () => {
           <p className="text-blue-100 text-lg mb-6 max-w-2xl mx-auto">
             Join us in our mission to simplify modern life through intelligent digital solutions.
           </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-orange-400 text-white rounded-full font-semibold hover:bg-orange-500 transition-all shadow-lg hover:shadow-xl group"
-          >
+
+            <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-orange-400 text-white rounded-full font-semibold hover:bg-orange-500 transition-all shadow-lg hover:shadow-xl group">
             Get Started
+           
             <svg 
               className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
               fill="none" 
@@ -142,7 +142,7 @@ const VisionMissionSection: React.FC = () => {
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-          </a>
+             </Link>
         </div>
       </div>
     </section>

@@ -37,11 +37,11 @@ const ServicesSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-16 max-w-3xl">
-          <p className="text-orange-400 font-semibold tracking-wide uppercase text-sm mb-4">OUR SOLUTIONS</p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-6">
+          <p className="text-orange-400 font-poppins font-semibold tracking-wide uppercase text-sm mb-4">OUR SOLUTIONS</p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-white leading-tight mb-6">
             Building Intelligent Solutions
           </h2>
-          <p className="text-lg text-blue-100 leading-relaxed">
+          <p className="text-lg text-blue-100 leading-relaxed font-inter">
             We build and deploy intelligent, internet-enabled solutions that solve a broad range of life's challenges. Our core areas of interest include:
           </p>
         </div>
@@ -65,10 +65,10 @@ const ServicesSection: React.FC = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-2xl md:text-3xl font-serif text-blue-950 mb-4">
+              <h3 className="text-2xl md:text-3xl font-poppins font-bold text-blue-950 mb-4">
                 {service.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed font-inter">
                 {service.description}
               </p>
             </div>

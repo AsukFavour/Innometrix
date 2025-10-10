@@ -35,14 +35,14 @@ const HowWeDoIt: React.FC = () => {
         }`}
       >
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-blue-950 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-poppins font-bold text-blue-950 mb-4">
             How We Do It: The Power of Experienced Professionals
           </h2>
           <div className="w-20 h-1 bg-orange-400 mx-auto"></div>
         </div>
         
         <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-8 md:p-12 shadow-xl">
-          <p className="text-gray-700 text-lg leading-relaxed max-w-4xl mx-auto text-center">
+          <p className="text-gray-700 text-lg leading-relaxed max-w-4xl mx-auto text-center font-inter">
             Innovation means little without execution. Our solutions are built on a foundation of professional experience. 
             The Innometrix Team (TIT) is composed of development veterans who follow rigorous, quality-focused processes. 
             We focus on simple, elegant design and robust development practices, ensuring that the "convenient" solution 

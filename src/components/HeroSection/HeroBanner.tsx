@@ -27,7 +27,7 @@ const CTABanner: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-20 px-6 md:px-12 lg:px-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section className="py-20 px-6 md:px-12 lg:px-20 bg-gradient-to-br from-blue-50 to-orange-50">
       <div 
         ref={bannerRef}
         className="max-w-7xl mx-auto bg-white rounded-[3rem] shadow-2xl overflow-hidden"

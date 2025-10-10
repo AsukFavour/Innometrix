@@ -13,11 +13,14 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen  flex flex-col">
       {/* Navigation */}
       <Navbar />
+    
+      {/* Main Content */}
+      <main className="flex-grow">
 
-      {/* Hero Section */}
+          {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-950 to-blue-900 py-20 px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6">
@@ -29,8 +32,7 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Content */}
-      <main>
+        
         {/* About Card Section */}
         <AboutCard />
 
