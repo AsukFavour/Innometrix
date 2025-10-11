@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
                 to="/" 
                 className={`font-inter font-medium transition-colors ${
                   isActive('/') 
-                    ? 'text-yellow-400' 
+                    ? 'text-orange-400' 
                     : 'text-white hover:text-gray-300'
                 }`}
               >
@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
                 to="/about" 
                 className={`font-inter font-medium transition-colors ${
                   isActive('/about') 
-                    ? 'text-yellow-400' 
+                    ? 'text-orange-400' 
                     : 'text-white hover:text-gray-300'
                 }`}
               >
@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
                 to="/solutions" 
                 className={`font-inter font-medium transition-colors ${
                   isActive('/solutions') 
-                    ? 'text-yellow-400' 
+                    ? 'text-orange-400' 
                     : 'text-white hover:text-gray-300'
                 }`}
               >
@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
                 to="/contact" 
                 className={`px-6 py-2 rounded-2xl font-poppins font-semibold transition-colors ${
                   isActive('/contact')
-                    ? 'bg-yellow-400 text-blue-950'
+                    ? 'bg-orange-400 text-blue-950'
                     : 'bg-white text-blue-950 hover:bg-gray-100'
                 }`}
               >
@@ -126,7 +126,7 @@ const Navbar: React.FC = () => {
             to="/" 
             className={`block py-4 font-inter font-medium transition-colors border-b border-blue-900 ${
               isActive('/') 
-                ? 'text-yellow-400' 
+                ? 'text-orange-400' 
                 : 'text-white hover:text-gray-300'
             }`}
             onClick={() => setIsMobileMenuOpen(false)}
@@ -137,7 +137,7 @@ const Navbar: React.FC = () => {
             to="/about" 
             className={`block py-4 font-inter font-medium transition-colors border-b border-blue-900 ${
               isActive('/about') 
-                ? 'text-yellow-400' 
+                ? 'text-orange-400' 
                 : 'text-white hover:text-gray-300'
             }`}
             onClick={() => setIsMobileMenuOpen(false)}
@@ -148,7 +148,7 @@ const Navbar: React.FC = () => {
             to="/solutions" 
             className={`block py-4 font-inter font-medium transition-colors border-b border-blue-900 ${
               isActive('/solutions') 
-                ? 'text-yellow-400' 
+                ? 'text-orange-400' 
                 : 'text-white hover:text-gray-300'
             }`}
             onClick={() => setIsMobileMenuOpen(false)}
@@ -160,7 +160,7 @@ const Navbar: React.FC = () => {
             to="/contact" 
             className={`block mt-6 px-6 py-3 rounded-full font-poppins font-semibold text-center transition-colors ${
               isActive('/contact')
-                ? 'bg-yellow-400 text-blue-950'
+                ? 'bg-orange-400 text-blue-950'
                 : 'bg-white text-blue-950 hover:bg-gray-100'
             }`}
             onClick={() => setIsMobileMenuOpen(false)}
