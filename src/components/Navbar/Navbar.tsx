@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import InnometrixLogo from '/Innmtx_logo.png';
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const location = useLocation();
+
+  // Helper function to check if link is active
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <>
       {/* Desktop Navbar - Rounded */}
-      <nav className="bg-blue-950 rounded-3xl mx-2 sm:mx-4 my-6  hidden md:block">
+      <nav className="bg-blue-950 rounded-3xl mx-2 sm:mx-4 my-6 hidden md:block">
         <div className="max-w-6xl mx-auto px-2">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
@@ -24,24 +28,50 @@ const Navbar: React.FC = () => {
 
             {/* Desktop Navigation */}
             <div className="flex items-center gap-12">
-              <Link to="/" className="text-white hover:text-gray-300 transition-colors font-inter font-medium">
+              <Link 
+                to="/" 
+                className={`font-inter font-medium transition-colors ${
+                  isActive('/') 
+                    ? 'text-yellow-400' 
+                    : 'text-white hover:text-gray-300'
+                }`}
+              >
                 Home
               </Link>
-              <Link to="/about" className="text-white hover:text-gray-300 transition-colors font-inter font-medium">
+              <Link 
+                to="/about" 
+                className={`font-inter font-medium transition-colors ${
+                  isActive('/about') 
+                    ? 'text-yellow-400' 
+                    : 'text-white hover:text-gray-300'
+                }`}
+              >
                 About Us
               </Link>
-              <Link to="/solutions" className="text-white hover:text-gray-300 transition-colors font-inter font-medium">
+              <Link 
+                to="/solutions" 
+                className={`font-inter font-medium transition-colors ${
+                  isActive('/solutions') 
+                    ? 'text-yellow-400' 
+                    : 'text-white hover:text-gray-300'
+                }`}
+              >
                 Our Solutions
               </Link>
-              
             </div>
 
             {/* Contact Button */}
             <div>
-              <Link to="/contact" className="px-6 py-2 bg-white text-blue-950 rounded-2xl font-poppins font-semibold hover:bg-gray-100 transition-colors">
+              <Link 
+                to="/contact" 
+                className={`px-6 py-2 rounded-2xl font-poppins font-semibold transition-colors ${
+                  isActive('/contact')
+                    ? 'bg-yellow-400 text-blue-950'
+                    : 'bg-white text-blue-950 hover:bg-gray-100'
+                }`}
+              >
                 Contact Us
               </Link>
-              
             </div>
           </div>
         </div>
@@ -52,7 +82,7 @@ const Navbar: React.FC = () => {
         <div className="px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <a href="#home" className="flex items-center">
+            <a href="/" className="flex items-center">
               <div className="bg-white p-2 rounded-lg">
                 <img 
                   src={InnometrixLogo} 
@@ -92,19 +122,35 @@ const Navbar: React.FC = () => {
         }`}
       >
         <div className="pt-24 px-6">
-          <Link to="/" className="flex items-center mb-8 font-inter font-medium text-white">
-          Home
+          <Link 
+            to="/" 
+            className={`block py-4 font-inter font-medium transition-colors border-b border-blue-900 ${
+              isActive('/') 
+                ? 'text-yellow-400' 
+                : 'text-white hover:text-gray-300'
+            }`}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Home
           </Link>
           <Link 
             to="/about" 
-            className="block py-4 text-white hover:text-gray-300 transition-colors border-b border-blue-900 font-inter font-medium"
+            className={`block py-4 font-inter font-medium transition-colors border-b border-blue-900 ${
+              isActive('/about') 
+                ? 'text-yellow-400' 
+                : 'text-white hover:text-gray-300'
+            }`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             About Us
           </Link>
           <Link 
             to="/solutions" 
-            className="block py-4 text-white hover:text-gray-300 transition-colors border-b border-blue-900 font-inter font-medium"
+            className={`block py-4 font-inter font-medium transition-colors border-b border-blue-900 ${
+              isActive('/solutions') 
+                ? 'text-yellow-400' 
+                : 'text-white hover:text-gray-300'
+            }`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Our Solutions
@@ -112,7 +158,11 @@ const Navbar: React.FC = () => {
           
           <Link 
             to="/contact" 
-            className="block mt-6 px-6 py-3 bg-white text-blue-950 rounded-full font-poppins font-semibold text-center hover:bg-gray-100 transition-colors"
+            className={`block mt-6 px-6 py-3 rounded-full font-poppins font-semibold text-center transition-colors ${
+              isActive('/contact')
+                ? 'bg-yellow-400 text-blue-950'
+                : 'bg-white text-blue-950 hover:bg-gray-100'
+            }`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Contact Us

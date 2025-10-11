@@ -192,7 +192,8 @@ Message: ${formData.message}
               {section === 'CONTACT US' && (
                 <>
                   <p className="text-gray-100">+234 803 308 7303</p>
-                  <p className="text-gray-100">moji@innometrixtechnology.com</p>
+                  <p className="text-gray-100">support @innometrixtechnology.com
+                  </p>
                 </>
               )}
             </motion.div>
