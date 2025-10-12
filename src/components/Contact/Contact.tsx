@@ -11,39 +11,51 @@ const Contact = () => {
   const [focused, setFocused] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
     try {
       // Basic email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(formData.email)) {
         setIsError(true);
+        setIsSubmitting(false);
         setTimeout(() => setIsError(false), 3000);
         return;
       }
 
-      // Construct email body from form data
-      const emailBody = `
-Name: ${formData.name}
-Email: ${formData.email}
-Message: ${formData.message}
-      `.trim();
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY, 
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `Innometrix Contact Form Submission from ${formData.name}`,
+        }),
+      });
 
-      // Create mailto URL
-      const mailtoUrl = `mailto:favourasuk@icloud.com?subject=Contact Form Submission from ${formData.name}&body=${encodeURIComponent(emailBody)}`;
+      const data = await response.json();
 
-      // Open default email client
-      window.location.href = mailtoUrl;
-
-      // Show success message and clear form
-      setIsSuccess(true);
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setIsSuccess(false), 3000);
+      if (data.success) {
+        setIsSuccess(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        setIsError(true);
+        setTimeout(() => setIsError(false), 3000);
+      }
     } catch {
       setIsError(true);
       setTimeout(() => setIsError(false), 3000);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -104,6 +116,7 @@ Message: ${formData.message}
                 placeholder="Name"
                 className="w-full px-6 py-4 rounded-lg border-2 border-gray-200 focus:border-orange-500 outline-none transition-all duration-300 bg-gray-50 focus:bg-white"
                 required
+                disabled={isSubmitting}
               />
               <div className={`absolute bottom-0 left-0 h-0.5 bg-orange-500 transition-all duration-300 ${focused === 'name' ? 'w-full' : 'w-0'}`} />
             </div>
@@ -119,6 +132,7 @@ Message: ${formData.message}
                 placeholder="Email"
                 className="w-full px-6 py-4 rounded-lg border-2 border-gray-200 focus:border-orange-500 outline-none transition-all duration-300 bg-gray-50 focus:bg-white"
                 required
+                disabled={isSubmitting}
               />
               <div className={`absolute bottom-0 left-0 h-0.5 bg-orange-500 transition-all duration-300 ${focused === 'email' ? 'w-full' : 'w-0'}`} />
             </div>
@@ -133,29 +147,39 @@ Message: ${formData.message}
                 placeholder="Tell us your needs"
                 className="w-full px-6 py-4 rounded-lg border-2 border-gray-200 focus:border-orange-500 outline-none transition-all duration-300 min-h-[200px] bg-gray-50 focus:bg-white resize-none"
                 required
+                disabled={isSubmitting}
               />
               <div className={`absolute bottom-0 left-0 h-0.5 bg-orange-400 transition-all duration-300 ${focused === 'message' ? 'w-full' : 'w-0'}`} />
             </div>
 
             <motion.button
               type="submit"
-              className="w-full bg-orange-400 text-white py-4 px-8 rounded-lg text-lg font-semibold hover:bg-orange-500 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="w-full bg-orange-400 text-white py-4 px-8 rounded-lg text-lg font-semibold hover:bg-orange-500 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               whileTap={{ scale: 0.95 }}
+              disabled={isSubmitting}
             >
-              Send message
+              {isSubmitting ? 'Sending...' : 'Send message'}
             </motion.button>
           </form>
 
           {/* Success and Error Notifications */}
           {isSuccess && (
-            <div className="mt-4 p-4 bg-green-100 text-green-800 rounded-lg text-center">
-              Message sent successfully!
-            </div>
+            <motion.div 
+              className="mt-4 p-4 bg-green-100 text-green-800 rounded-lg text-center"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              ✓ Message sent successfully! We'll get back to you soon.
+            </motion.div>
           )}
           {isError && (
-            <div className="mt-4 p-4 bg-red-100 text-red-800 rounded-lg text-center">
-              An error occurred. Please try again.
-            </div>
+            <motion.div 
+              className="mt-4 p-4 bg-red-100 text-red-800 rounded-lg text-center"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              ✕ An error occurred. Please check your email and try again.
+            </motion.div>
           )}
         </motion.div>
 
@@ -192,8 +216,7 @@ Message: ${formData.message}
               {section === 'CONTACT US' && (
                 <>
                   <p className="text-gray-100">+234 803 308 7303</p>
-                  <p className="text-gray-100">support @innometrixtechnology.com
-                  </p>
+                  <p className="text-gray-100">support@innometrixtechnology.com</p>
                 </>
               )}
             </motion.div>
