@@ -94,7 +94,7 @@ const ValuesObjectivesSection: React.FC = () => {
                   visibleCards.includes(index) 
                     ? 'translate-y-0 opacity-100' 
                     : 'translate-y-10 opacity-0'
-                }`}
+                } ${index === 3 ? 'sm:col-start-auto lg:col-start-1' : ''} ${index === 4 ? 'sm:col-start-auto lg:col-start-3' : ''}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-950 rounded-full flex items-center justify-center mb-4 sm:mb-6 text-white">
